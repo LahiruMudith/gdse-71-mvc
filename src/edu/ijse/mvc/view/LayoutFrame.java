@@ -30,11 +30,12 @@ public class LayoutFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         navigationPanel = new javax.swing.JPanel();
         btnManageCustomer = new javax.swing.JButton();
+        btnManageItem = new javax.swing.JButton();
         bodyPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Wide Latin", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Swis721 BlkCn BT", 0, 24)); // NOI18N
         jLabel1.setText("Super Market");
 
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
@@ -42,23 +43,30 @@ public class LayoutFrame extends javax.swing.JFrame {
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addContainerGap(398, Short.MAX_VALUE)
+                .addContainerGap(397, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(329, 329, 329))
+                .addGap(330, 330, 330))
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        btnManageCustomer.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
+        btnManageCustomer.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
         btnManageCustomer.setText("manageCustomer");
         btnManageCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageCustomerActionPerformed(evt);
+            }
+        });
+
+        btnManageItem.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        btnManageItem.setText("manageItem");
+        btnManageItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageItemActionPerformed(evt);
             }
         });
 
@@ -70,13 +78,19 @@ public class LayoutFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnManageCustomer)
                 .addGap(22, 22, 22))
+            .addGroup(navigationPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnManageItem)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         navigationPanelLayout.setVerticalGroup(
             navigationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(navigationPanelLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(btnManageCustomer)
-                .addContainerGap(384, Short.MAX_VALUE))
+                .addGap(59, 59, 59)
+                .addComponent(btnManageItem)
+                .addContainerGap(289, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout bodyPanelLayout = new javax.swing.GroupLayout(bodyPanel);
@@ -118,6 +132,11 @@ public class LayoutFrame extends javax.swing.JFrame {
         loadCustomerForm();
     }//GEN-LAST:event_btnManageCustomerActionPerformed
 
+    private void btnManageItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageItemActionPerformed
+        // TODO add your handling code here:
+        loadItemForm();
+    }//GEN-LAST:event_btnManageItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -157,6 +176,7 @@ public class LayoutFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JButton btnManageCustomer;
+    private javax.swing.JButton btnManageItem;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel navigationPanel;
@@ -167,6 +187,15 @@ public class LayoutFrame extends javax.swing.JFrame {
         CustomerPane customerPane = new CustomerPane();
         customerPane.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
         bodyPanel.add(customerPane);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+        
+    }
+    private void loadItemForm() {
+        bodyPanel.removeAll();
+        ItemPane itemPane = new ItemPane();
+        itemPane.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(itemPane);
         bodyPanel.repaint();
         bodyPanel.revalidate();
         

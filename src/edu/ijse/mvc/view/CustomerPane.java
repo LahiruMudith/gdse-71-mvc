@@ -256,12 +256,12 @@ public class CustomerPane extends javax.swing.JPanel {
                     .addComponent(btnSave)
                     .addComponent(btnUpdate)
                     .addComponent(btnDelete))
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(223, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap(7, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
