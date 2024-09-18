@@ -6,7 +6,9 @@ package edu.ijse.mvc.view;
 import edu.ijse.mvc.controller.ItemController;
 import edu.ijse.mvc.controller.CustomerController;
 import edu.ijse.mvc.dto.CustomerDto;
+import edu.ijse.mvc.dto.ItemDto;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,6 +23,7 @@ public class OrderPlacePane extends javax.swing.JPanel {
      */
     public OrderPlacePane() {
         initComponents();
+        loadTabl();
     }
 
     /**
@@ -43,14 +46,14 @@ public class OrderPlacePane extends javax.swing.JPanel {
         lblCustomer = new javax.swing.JLabel();
         lblItem = new javax.swing.JLabel();
         btnSearchItem = new javax.swing.JButton();
-        txtItem = new javax.swing.JTextField();
+        txtItemId = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtQty = new javax.swing.JTextField();
         txtDiscount = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        btnAddToCart = new javax.swing.JButton();
-        btnPlaceOrder = new javax.swing.JButton();
+        btnAddCart = new javax.swing.JButton();
+        btnPlaceOrder1 = new javax.swing.JButton();
 
         tblCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -102,9 +105,9 @@ public class OrderPlacePane extends javax.swing.JPanel {
             }
         });
 
-        txtItem.addActionListener(new java.awt.event.ActionListener() {
+        txtItemId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtItemActionPerformed(evt);
+                txtItemIdActionPerformed(evt);
             }
         });
 
@@ -129,14 +132,19 @@ public class OrderPlacePane extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel6.setText("Discount");
 
-        btnAddToCart.setBackground(new java.awt.Color(255, 255, 51));
-        btnAddToCart.setText("Add To Cart");
-
-        btnPlaceOrder.setBackground(new java.awt.Color(0, 255, 51));
-        btnPlaceOrder.setText("Place Order");
-        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
+        btnAddCart.setBackground(new java.awt.Color(255, 255, 51));
+        btnAddCart.setText("Add To Cart");
+        btnAddCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPlaceOrderActionPerformed(evt);
+                btnAddCartActionPerformed(evt);
+            }
+        });
+
+        btnPlaceOrder1.setBackground(new java.awt.Color(0, 255, 51));
+        btnPlaceOrder1.setText("Place Order");
+        btnPlaceOrder1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlaceOrder1ActionPerformed(evt);
             }
         });
 
@@ -161,7 +169,7 @@ public class OrderPlacePane extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtItem, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtItemId, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btnSearchItem)))
                                 .addGap(15, 15, 15)
@@ -175,7 +183,7 @@ public class OrderPlacePane extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(txtDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnAddToCart))))
+                                .addComponent(btnAddCart))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel3)
@@ -188,7 +196,7 @@ public class OrderPlacePane extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnPlaceOrder)
+                            .addComponent(btnPlaceOrder1)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -215,7 +223,7 @@ public class OrderPlacePane extends javax.swing.JPanel {
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(txtItem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtItemId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnSearchItem, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(lblItem, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -224,12 +232,12 @@ public class OrderPlacePane extends javax.swing.JPanel {
                     .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(txtDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAddToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAddCart, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPlaceOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(btnPlaceOrder1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -248,11 +256,12 @@ public class OrderPlacePane extends javax.swing.JPanel {
 
     private void btnSearchItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchItemActionPerformed
         // TODO add your handling code here:
+        searchItem();
     }//GEN-LAST:event_btnSearchItemActionPerformed
 
-    private void txtItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtItemActionPerformed
+    private void txtItemIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtItemIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtItemActionPerformed
+    }//GEN-LAST:event_txtItemIdActionPerformed
 
     private void txtQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtyActionPerformed
         // TODO add your handling code here:
@@ -262,14 +271,19 @@ public class OrderPlacePane extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDiscountActionPerformed
 
-    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
+    private void btnAddCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCartActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnPlaceOrderActionPerformed
+        addToCart();
+    }//GEN-LAST:event_btnAddCartActionPerformed
+
+    private void btnPlaceOrder1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrder1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPlaceOrder1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddToCart;
-    private javax.swing.JButton btnPlaceOrder;
+    private javax.swing.JButton btnAddCart;
+    private javax.swing.JButton btnPlaceOrder1;
     private javax.swing.JButton btnSearchCustomer;
     private javax.swing.JButton btnSearchItem;
     private javax.swing.JLabel jLabel1;
@@ -284,7 +298,7 @@ public class OrderPlacePane extends javax.swing.JPanel {
     private javax.swing.JTable tblCart;
     private javax.swing.JTextField txtCustomerId;
     private javax.swing.JTextField txtDiscount;
-    private javax.swing.JTextField txtItem;
+    private javax.swing.JTextField txtItemId;
     private javax.swing.JTextField txtOrderId;
     private javax.swing.JTextField txtQty;
     // End of variables declaration//GEN-END:variables
@@ -295,9 +309,53 @@ public class OrderPlacePane extends javax.swing.JPanel {
             CustomerDto dto = customerController.searchCustomer(custId);
             if(dto!=null){
                 lblCustomer.setText(dto.getCustTitle() +"."+ dto.getCustName());
+            }else {
+                JOptionPane.showMessageDialog(this, "Customer Not Found");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
+    }
+    private void searchItem(){
+        String itemId = txtItemId.getText();
+        
+        try {
+            ItemDto dto = itemController.searchItem(itemId);
+            if(dto!=null){
+                lblItem.setText(dto.getDescription() +" | "+ "Pack Size: "+ dto.getPackSize() +" | "+ "Aviable Qty in: "+dto.getQoh() +" | "+ "UnitPrice: "+dto.getUnitPrice());
+            }else {
+                JOptionPane.showMessageDialog(this, "Item Not Foun");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
+
+    private void loadTabl() {
+        String[] coloumn = {"Item Code" , "Qty", "Discount"};
+        DefaultTableModel dtm = new DefaultTableModel(coloumn, 0){
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        tblCart.setModel(dtm);
+    }
+
+    private void addToCart() {
+        String  itemCode = txtItemId.getText();
+        String qty = txtQty.getText();
+        String discount = txtDiscount.getText();
+        Object[] rowData = {itemCode, qty, discount};
+        
+        DefaultTableModel dtm = (DefaultTableModel) tblCart.getModel();
+        dtm.addRow(rowData);
+        clearItemForm();        
+    }
+
+    private void clearItemForm() {
+        txtItemId.setText("");
+        txtQty.setText("");
+        txtDiscount.setText("");
+        lblItem.setText("");
     }
 }

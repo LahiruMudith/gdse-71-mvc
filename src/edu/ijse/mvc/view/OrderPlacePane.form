@@ -35,7 +35,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txtItem" min="-2" pref="101" max="-2" attributes="0"/>
+                                      <Component id="txtItemId" min="-2" pref="101" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="btnSearchItem" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -52,7 +52,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtDiscount" min="-2" pref="101" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnAddToCart" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAddCart" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -69,7 +69,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="btnPlaceOrder" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnPlaceOrder1" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="699" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -105,7 +105,7 @@
                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtItem" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtItemId" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSearchItem" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -117,13 +117,13 @@
                   <Component id="txtQty" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtDiscount" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAddToCart" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="btnAddCart" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="160" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnPlaceOrder" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace pref="9" max="32767" attributes="0"/>
+              <Component id="btnPlaceOrder1" min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -210,9 +210,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchItemActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtItem">
+    <Component class="javax.swing.JTextField" name="txtItemId">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtItemActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtItemIdActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -249,15 +249,18 @@
         <Property name="text" type="java.lang.String" value="Discount"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnAddToCart">
+    <Component class="javax.swing.JButton" name="btnAddCart">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Add To Cart"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddCartActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPlaceOrder">
+    <Component class="javax.swing.JButton" name="btnPlaceOrder1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="ff" red="0" type="rgb"/>
@@ -265,7 +268,7 @@
         <Property name="text" type="java.lang.String" value="Place Order"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPlaceOrderActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPlaceOrder1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
