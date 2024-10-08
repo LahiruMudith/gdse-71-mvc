@@ -148,7 +148,8 @@ public class OrderPlacePane extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Serif", 0, 12)); // NOI18N
         jLabel6.setText("Discount");
 
-        btnAddCart.setBackground(new java.awt.Color(255, 255, 51));
+        btnAddCart.setBackground(new java.awt.Color(51, 51, 51));
+        btnAddCart.setForeground(new java.awt.Color(255, 255, 255));
         btnAddCart.setText("Add To Cart");
         btnAddCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +157,7 @@ public class OrderPlacePane extends javax.swing.JPanel {
             }
         });
 
-        btnPlaceOrder.setBackground(new java.awt.Color(255, 255, 51));
+        btnPlaceOrder.setBackground(new java.awt.Color(0, 255, 51));
         btnPlaceOrder.setText("Place Order");
         btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

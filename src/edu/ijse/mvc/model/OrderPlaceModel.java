@@ -79,6 +79,6 @@ public class OrderPlaceModel {
         } finally {
             connection.setAutoCommit(true);
         }
-        return "Hi";
+        return "null";
     }
 }
